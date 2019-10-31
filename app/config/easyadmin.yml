@@ -1,0 +1,93 @@
+easy_admin:
+    design:
+        menu:
+            - { entity: 'Albums' }
+            - { entity: 'Artiste' }
+            - { entity: 'Genres' }
+    entities:
+        Albums:
+            class: BlogBundle\Entity\Albums
+            label: 'Albums'
+            list:
+                actions: ['show','new', 'edit', 'delete']
+                title: "Listes des Albums"
+                fields:
+                    - { property: 'image', type: 'image', label: 'Image', base_path: '%app.path.product_images%' }
+                    - { property: 'chanteur', label: 'Chanteur' }
+                    - { property: 'titre', label: 'Titre' }
+                    - { property: 'genres', label: 'genre' }
+                    - { property: 'artiste.nom' , label: 'artiste'}
+                    - { property: 'prix', label: 'Prix (Ar)' }
+            show:
+                title: 'Albums listes'
+                fields:
+                    - { property: 'chanteur', label: 'Chanteur' }
+                    - { property: 'titre', label: 'Titre' }
+                    - { property: 'genres', label: 'genre' }
+                    - { property: 'prix', label: 'Prix' }
+                    - { property: 'artiste.nom' , label: 'artiste'}
+                    - { property: 'image', type: 'image', label: 'Image', base_path: '%app.path.product_images%' }
+            edit:
+                title: 'Albums de chanson'
+                fields:
+                    - { property: 'chanteur', label: 'Chanteur' }
+                    - { property: 'titre', label: 'Titre' }
+                    - { property: 'genres', label: 'genre' }
+                    - { property: 'prix', label: 'Prix' }
+                    - { property: 'artiste', label: 'artiste correspondant' }
+                    - { property: 'imageFile', type: 'file', label: 'Image', base_path: '%app.path.product_images%' }
+            new:
+                title: 'Albums de chanson'
+                fields:
+                    - { property: 'chanteur', label: 'Chanteur' }
+                    - { property: 'titre', label: 'Titre' }
+                    - { property: 'genres', label: 'genre' }
+                    - { property: 'prix', label: 'Prix' }
+                    - { property: 'artiste', label: 'artiste correspondant' }
+                    - { property: 'imageFile', type: 'file', label: 'Image', base_path: '%app.path.product_images%'} 
+
+        Artiste:
+            class: BlogBundle\Entity\Artiste
+            label: 'Artiste'
+            list:
+                actions: ['show','new', 'edit', 'delete']
+                title: "Listes des Artistes"
+                fields:
+                    - { property: 'nom', label: 'Nom' }
+                    - { property: 'apropos', label: 'A propos' }
+            show:
+                title: 'Artiste'
+                fields:
+                    - { property: 'nom', label: 'Nom' }
+                    - { property: 'apropos', label: 'A propos' }
+            edit:
+                title: 'Artiste'
+                fields:
+                    - { property: 'nom', label: 'Nom' }
+                    - { property: 'apropos', label: 'A propos' }
+            new:
+                title: 'Artiste'
+                fields:
+                    - { property: 'nom', label: 'Nom' }
+                    - { property: 'apropos', label: 'A propos' } 
+        
+        Genres:
+            class: BlogBundle\Entity\Genres
+            label: 'Genres des albums'
+            list:
+                actions: ['show','new', 'edit', 'delete']
+                title: "Listes des Artistes"
+                fields:
+                    - { property: 'genre', label: 'Genres' }
+            show:
+                title: 'Genres'
+                fields:
+                    - { property: 'genre', label: 'Genres' }    
+            edit:
+                title: 'Genre'
+                fields:
+                    - { property: 'genre', label: 'Genres' }
+            new:
+                title: 'Nouveau genre'
+                fields:
+                  - { property: 'genre', label: 'Genres' }

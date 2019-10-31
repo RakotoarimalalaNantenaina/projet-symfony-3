@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Album</th>
+            <th scope="col">Chanteur</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Prix</th>
+        </tr>
+        </thead>
+        {% for genre in objetgenre %}
+            <tr>
+                <td><img src="{{ asset('uploads/images/products/'~genre.image)}}" alt="image" id="image2"></td>
+                <td>{{genre.chanteur}}</td>
+                <td>{{genre.titre}}</td>
+                <td><a href="{{ path('genre', {'genre': genre.genre})}}">{{genre.genre}}</a></td>
+                <td><a href="{{path('prix', {'prix':genre.prix})}}"><span id="spantitre">{{genre.prix}} Ar</span></a></td>
+            </tr>
+        {% endfor %}
+        </table><br>
+    <a href="{{ path('liste_albums')}}"> listes des albums</a><br>
+   </div>
+{% endblock %}

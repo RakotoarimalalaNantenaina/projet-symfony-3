@@ -1,0 +1,28 @@
+{% trans_default_domain 'FOSUserBundle' %} {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+            <span class="login100-form-title p-b-80" id="connexion">INSCRIPTION </span>
+            <div class="wrap-input100 validate-input m-b-16">
+                <label id="label3">{{ form_label(form.email)}} :</label><br> {{ form_widget(form.email, {attr:{'class':'input100'}})}}<br>
+            </div>
+            <div class="wrap-input100 validate-input m-b-16">
+                <label id="label3">{{ form_label(form.username)}} :</label><br> {{ form_widget(form.username, {attr:{'class':'input100'}})}}<br>
+            </div>
+            <br>
+            <div class="wrap-input100 validate-input m-b-16">
+                <label id="label2">Mot de passe :</label> {{ form_widget (form.plainPassword.first, {attr:{'class':'input100'}}) }}</br>
+                <label id="label2"> Confirmation de mot de passe :</label> {{ form_widget (form.plainPassword.second, {attr:{'class':'input100'}}) }}
+
+            </div>
+            <div class="form-group ">
+                <button type="submit" class="btn btn-primary btn-lg btn-block login-button" value="{{ 'registration.submit'|trans }}">Creer un compte</button>
+            </div>
+            {{ form_rest(form)}} {{ form_end(form) }}
+            <div class="login-register">
+                <a class="btn btn-success" href="{{ path('fos_user_security_login')}}">Se connecter</a>
+            </div>
+        </div>
+    </div>
+</div>

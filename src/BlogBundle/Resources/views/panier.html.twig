@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %} 
+{% block body %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#pay").click(function () {
+            alert("Vous voulez vraiment de faire le paymant!!!");
+        });
+    });
+</script>
+    {% set totalHT = 0 %}
+<div class='container'>
+    <div class='row'>
+        <div class='span3'></div>
+        <div class='span9'>
+            <form>
+                <table class='table table-striped table-hover' style='margin-top:80px'>
+                    <thead>
+                        <tr>
+                            <th>Albums</th>
+                            <th>Titre</th>
+                            <th>Nombre de commande</th>
+                            <th>Prix unitaire</th>
+                            <th>Prix total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for prod in produit %}
+
+                            <tr>
+                                    <td>
+                                        <img src="{{ asset('uploads/images/products/'~prod.image) }}" class="img-responsive" id="image3" alt="Image">
+                                    </td>
+                                    <td>{{ prod.titre}}</td>
+                                    <td>
+                                        <select name='qte' class='span1' onchange='this.form.submit()'>
+
+                                            {% for i in 1..10 %}
+                                                <option value='{{ i }}' {% if i == panier[prod.id] %} selected='selected' {% endif %}>{{i}}</option>
+                                            {% endfor %}
+
+                                        </select>&nbsp;
+
+                                        <a href="{{path('delete', {'id': prod.id } ) }}">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </a>
+
+                                    </td>
+
+                                    <td>{{ prod.prix }}</td>
+                                    <td>{{ prod.prix  * panier[prod.id] }}</td>
+                                    <td><a class="btn btn-primary" href="{{path('delete' ,{'id': prod.id })}}">supprimer au panier</a></td>
+                                
+                            </tr>
+                            {% set totalHT = totalHT + (prod.prix * panier[prod.id]) %}
+
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+                <dl class='dl-horizontal pull-right'>
+                    <dt>Total du prix à payer :
+                    </dt>
+                    <dd>{{ totalHT }} Ar</dd>
+                <a href='{{path("payer")}}' class='btn btn-primary' id='pay' onclick='valider()'>Payer</a>
+                </dl>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

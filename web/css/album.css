@@ -1,0 +1,418 @@
+#tete {
+    font-family: 'myFont';
+    color: rgb(245, 239, 231);
+    font-size: 50px;
+}
+
+.card {
+    margin: 0 auto;
+}
+
+.card .carousel-item {
+    height: 200px;
+}
+
+.card .carousel-caption {
+    padding: 0;
+    right: 0;
+    left: 0;
+    color: #3d3d3d;
+}
+
+.card .carousel-caption h3 {
+    color: #3d3d3d;
+}
+
+.card .carousel-caption p {
+    line-height: 30px;
+}
+
+.card .carousel-caption .col-sm-3 {
+    display: flex;
+    align-items: center;
+}
+
+.card .carousel-caption .col-sm-9 {
+    text-align: left;
+}
+
+.navi a {
+    text-decoration: none;
+}
+
+a>.ico {
+    background-color: grey;
+    padding: 10px;
+}
+
+a:hover>.ico {
+    background-color: #666;
+}
+
+h1 {
+    color: rgb(149, 149, 223);
+}
+
+#liste {
+    background-color: rgb(71, 182, 154);
+    padding-top: 20px;
+    color: royalblue;
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+#a {
+    color: rgb(71, 182, 154);
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+#a:hover {
+    color: rgb(65, 4, 126);
+    font-family: Myfont;
+}
+
+#total {
+    width: 100%;
+    height: auto;
+}
+
+#ulliste {
+    width: 400px;
+    height: auto;
+}
+
+#image1 {
+    width: 300px;
+    height: 225px;
+    border-radius: 10px;
+}
+
+#image1:hover {
+    width: 310px;
+    border-radius: 10px;
+}
+
+#spanprix {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    text-decoration-line: underline;
+}
+
+#palbum {
+    color: rgb(67, 65, 196);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+#panier {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+#spantitre {
+    color: rgb(112, 33, 33);
+}
+
+#thartiste {
+    color: rgb(111, 111, 206);
+    text-align: center;
+}
+
+#tableartiste {
+    width: auto;
+    height: auto;
+}
+
+#total {
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#tdartiste {
+    width: 600px;
+    background-color: rgb(25, 25, 75);
+    border-radius: 15px;
+}
+
+#tdartiste1 {
+    width: 240px;
+    text-align: center;
+}
+
+#h2artiste {
+    color: rgb(153, 60, 60);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+}
+
+#image2 {
+    width: 190px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+.table {
+    border-radius: 15px;
+}
+
+#row {
+    background-color: rgb(107, 107, 241);
+    padding-top: 70px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+#btn1 {
+    background-color: rgb(46, 46, 206);
+    border-color: rgb(46, 46, 206);
+}
+
+#row1 {
+    width: 302px;
+    height: 420px;
+    border-radius: 10px;
+}
+
+#row1:hover {
+    width: 310px;
+    background-color: rgb(138, 183, 226);
+    height: 425px;
+    border-radius: 10px;
+}
+
+#h3artiste {
+    color: #666;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#h4prix {
+    color: rgb(23, 23, 124);
+    text-align: center;
+    text-decoration: underline;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#total1 {
+    background-color: rgb(199, 216, 240);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#divprix {
+    background-color: rgb(250, 249, 249);
+}
+
+nav ul {
+    padding: 0px;
+    margin: 10px;
+    list-style-type: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+nav li {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(51, 68, 68);
+    border-right: 1px solid #CCCCCC;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: rgb(248, 247, 247);
+    font-size: 25px;
+}
+
+nav ul :hover {
+    background-color: rgb(5, 41, 24);
+    color: rgb(129, 216, 218);
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav2 {
+    margin-left: 200px;
+}
+
+#a2 {
+    background-color: rgb(95, 10, 14);
+}
+
+#a3 {
+    background-color: #463dc4;
+}
+
+#a3 :hover {
+    color: #CCCCCC;
+    background-color: rgb(61, 63, 175);
+    color: rgb(231, 231, 241);
+}
+
+#a2 :hover {
+    background-color: rgb(95, 10, 14);
+    color: lightcoral;
+    text-decoration-style: none;
+}
+
+#a4 {
+    color: #e98080;
+    font-size: 20px;
+}
+
+#a5 {
+    color: rgb(229, 241, 228);
+    font-size: 25px;
+}
+
+#lia {
+    background-color: rgb(96, 37, 206);
+}
+
+#lia :hover {
+    background-color: rgb(96, 37, 206);
+}
+
+#imagefond {
+    width: auto;
+    height: 300px;
+}
+
+#h12 {
+    color: rgb(37, 184, 221);
+}
+
+#h2artiste {
+    color: #d8d508;
+    font-size: 25px;
+}
+
+#row2 {
+    width: 310px;
+    background-color: #473636;
+    border-radius: 10px;
+}
+
+#image3 {
+    width: 310px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+#spanp {
+    font-size: 18px;
+    color: #CCCCCC !important;
+}
+
+#spant {
+    color: #3da5c4;
+}
+
+#h4span {
+    color: #CCCCCC;
+}
+
+#title {
+    color: #3da5c4;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+#label2 {
+    color: #35c1da;
+    font-size: 20px;
+    text-decoration-line: underline;
+}
+
+#checkbox {
+    width: 25px;
+    height: 10px;
+}
+
+#label3 {
+    color: #275a63;
+    font-size: 20px;
+}
+
+#containershow {
+    background-color: #09151d;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    border-radius: 20px;
+}
+
+.spanshow {
+    font-size: 25px;
+    padding-left: 20px;
+    color: #8a3ab8;
+}
+
+hr {
+    color: #CCCCCC !important;
+}
+
+#monselect {
+    width: 50px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#title9 {
+    font-size: 30px;
+}
+
+#colmd2 {
+    background-color: #174357;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#total1 {
+    background-color: #3da5c4;
+    border-radius: 5px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#title2 {
+    color: #174357;
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#spanconfirmed {
+    font-size: 18px;
+    color: #80cbd8;
+}
+
+#contant {
+    padding-top: 100px;
+    margin-top: 50px;
+    text-align: center;
+    background-color: #3d3d3d;
+    padding-bottom: 200px;
+    border-radius: 10px;
+}
+
+#h2color {
+    color: #80cbd8;
+}
+
+#rouge {
+    color: #c53d3d;
+}

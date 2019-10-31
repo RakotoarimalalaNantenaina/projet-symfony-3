@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div  id="total1">
+<div class="card col-md-6 mt-5 mb-5" id="divprix">
+<h4 id="h4prix">Les albums appartient au prix :</h4>
+{% for prix in prix %}
+    <div  class="carousel slide" data-ride="carousel" data-interval="100000">
+        <div class="w-100 carousel-inner" role="listbox">
+            <div class="carousel-item active">
+                <div class="carousel-caption">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img src="{{ asset('uploads/images/products/'~prix.image)}}" alt="image" class="rounded-circle img-fluid">
+                        </div>
+                        <div class="col-sm-9">
+                            <h3>{{prix.chanteur}}</h3>
+                            <small>{{prix.chanteur}} ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse .</small><br>
+                            <h6>{{prix.prix}} Ar</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+    <a href="{{ path('liste_albums')}}">Listes des albums</a>
+    <a href="{{ path('accueil')}}" style="color:blueviolet;font-size:20px">Accueil</a>
+</div>
+</div>
+
+{% endblock %}

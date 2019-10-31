@@ -1,0 +1,57 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<link type="text/css" rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
+<link type="text/css" rel="stylesheet" href="{{ asset('css/album.css')}}">
+
+ {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+
+<div class="container" id="total1">
+    <div class="row main">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="col-md-4"></div>
+        <div class="main-login main-center">
+            <div class="panel-heading">
+                <div class="panel-title text-center">
+                    <h1 class="title" id="title2">INSCRIPTION</h1>
+                    <a href="{{ path('fos_user_profile_show')}}">Mon compte</a>
+                    <hr />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="cols-sm-10">
+                    <label id="label3">{{ form_label(form.email)}} :</label>
+                    <div class="input-group">
+                        {{ form_widget(form.email, {attr:{'class':'form-control'}})}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="cols-sm-10">
+                    <label id="label3">{{ form_label(form.username)}}</label>
+                    <div class="input-group">
+                        {{ form_widget(form.username, {attr:{'class':'form-control'}})}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        {{ form_row(form.plainPassword)}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <button type="submit" class="btn btn-primary btn-lg btn-block login-button" value="{{ 'registration.submit'|trans }}">Creer
+                        un compte</button>
+            </div>
+            {{ form_rest(form)}} {{ form_end(form) }}
+            <div class="login-register">
+                <a class="btn btn-success" href="{{ path('fos_user_security_login')}}">Se connecter</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
