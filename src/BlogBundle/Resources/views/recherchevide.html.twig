@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h4 style="text-align:center">{{nullable}}</h4><br>
+    <center>
+        <a href="{{ path('liste_albums')}}" class="btn btn-primary">liste des albums</a><br><br>
+        <a href="{{ path('accueil')}}" class="btn btn-success">Accueil</a><br>
+    </center>
+{% endblock %}

@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate/animate.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/css-hamburgers/hamburgers.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('vendor/select2/select2.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    </head>
+        <div class="limiter">       
+            <div class="container-login100">
+                <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+                    {% trans_default_domain 'FOSUserBundle' %}
+
+                    {% if error %}
+                        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+                    <form action="{{ path("fos_user_security_check") }}" method="post" class="login100-form validate-form">
+                        {% if csrf_token %}
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        {% endif %}
+                        <span class="login100-form-title p-b-80" id="connexion">
+                           Connexion
+                        </span>
+
+                        <div class="wrap-input100 validate-input m-b-16">
+                            <label>Nom d'utilisateur :</label><br>
+                            <input class="input100" type="text" name="_username" required="required" autocomplete="username" placeholder="Nom d'utilisateur" /><br>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-16">
+                            <label>Votre mot de passe :</label><br>
+                            <input class="input100" type="password" name="_password" required="required" autocomplete="current-password" placeholder="Mot de passe"><br>
+                        </div>
+
+                        <div class="contact100-form-checkbox m-l-4">
+                             <input type="checkbox"  name="_remember_me" value="on" />
+                            <label for="Se souvenir de moi" id="labellogin">Se souvenir de moi</label>
+                        </div>
+
+                        <div class="container-login100-form-btn p-t-25">
+                            <input type="submit" id="submitconnexion" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+                        </div>
+
+                        <div class="text-center w-full p-t-42 p-b-22">
+                            <span class="txt1">
+                                Connecter avec  
+                            </span>
+                        </div>
+
+                        <a href="#" class="btn-face m-b-10">
+                            <img src="{{ asset('images/facebook.png') }} ">
+                            Facebook
+                        </a>
+
+                        <a href="#" class="btn-google m-b-10">
+                            <img src="{{ asset('images/icon-google.png') }} ">
+                            Google
+                        </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+<html>

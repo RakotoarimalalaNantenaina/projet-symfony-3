@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>
+            {% block title %}Page{% endblock %}
+        </title>
+        {% block stylesheets %}
+            <link type="text/css" rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css')}}">
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/album.css')}}">
+            <link type="text/css" rel="stylesheet" href="{{ asset('css/listealbum.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/landing-page.css')}}" >
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/landing-page.min.css') }}">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+    </head>
+    <body>
+           <header style="background-image: url('images/fond3.jpg')">
+           <div class="container-fluid">
+           <div class="row">
+            <div class="col-md-6">
+                    <nav>
+                        <ul>
+                            <li><a href="{{ path('homepage') }}">Accueil</a></li>
+                            <li><a href="{{ path('liste_albums') }}" >Albums</a></li>
+                            <li><a href="{{ path('liste_artiste') }}">Artistes</a></li>
+                            <li><a href="#">Blog</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6">
+                        {% if app.user %}
+                        <nav id="nav2">
+                            <ul>
+                                <li id="lia"><a id="a5" href="{{ path('fos_user_profile_show')}}">{{app.user.username}}</a></li>
+                                <li><a id="a4" href="{{ path('fos_user_security_logout')}}">Déconnexion</a></li>
+                            </ul>
+                        </nav>
+                        {% else %}
+                        <nav id="nav2">
+                            <ul>
+                                <li id="a2"><a href="{{ path('fos_user_security_login')}}">Connexion</a></li>
+                                <li id="a3"><a href="{{ path('fos_user_registration_register')}}">Inscription</a></li>                         
+                            </ul>
+                        </nav>
+                        {% endif %}
+                </div>
+            </div>
+            </div>
+		</header>
+        {% block body %}{% endblock %}
+        <section class="call-to-action text-white text-center" style="background-image: url('images/footer.jpg')">
+          <div class="overlay"></div>
+          <div class="container">
+              <div class="row">
+                  <div class="col-xl-9 mx-auto">
+                      <h2 class="mb-4">Prêt à commencer? S'inscrire maintenant!</h2>
+                  </div>
+                  <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                      <form>
+                          <div class="form-row">
+                              <div class="col-12 col-md-3">
+                                  <a type="submit" class="btn btn-block btn-lg btn-primary" href="{{ path('fos_user_registration_register')}}">S'inscrire</a>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <ul class="list-inline mb-2">
+              <li class="list-inline-item">
+                <a href="#">A propos</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Contacter</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">facebook</a>
+              </li>
+              <li class="list-inline-item">&sdot;</li>
+              <li class="list-inline-item">
+                <a href="#">Creation du site</a>
+              </li>
+            </ul>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Site web.copyrigth in 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+        {% block javascripts %}
+            <script type="text/javascript" src="css/erreur.js"></script>
+    <script type='text/javascript'>
+    $(document).ready(function () {
+        $('#pay').click(function () {
+            alert('okay');
+        });
+    });
+</script>
+        {% endblock %}
+    </body>
+</html>

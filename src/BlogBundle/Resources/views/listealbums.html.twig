@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %} {% block title %} Albums {% endblock %} {% block body %}
+<div class="container">
+    <h2 id="h2artiste">Les artistes Malagasy avec leurs albums</h2><br>
+
+    <form class="form-inline my-2 my-lg-0" action="/recherche" method="POST">
+        <label>Recherche Rapide :
+            </label>
+        <input type="text" class="form-control mr-sm-2" name="recherche" id="search">
+        <label id="erreur" style="color:red"></label>
+        <input onclick="rechercher()" class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Rechercher">
+    </form><br><br>
+    <div class="row view-group" id="row">
+        {% for album in albums %}
+        <div class="item col-xs-4 col-lg-4">
+            <div class="thumbnail card" id="row1">
+                <div class="img-event">
+                    <img src="{{ asset('uploads/images/products/'~album.image)}}" alt="image" id="image1">
+                </div>
+                <div class="caption card-body">
+                    <h7 class="group card-title inner list-group-item-heading">
+                        {{album.chanteur}}
+                    </h7>
+                    <p class="group inner list-group-item-text" id="palbum">
+                        <br>
+                        <span id="spanprix">titre :</span>
+                        <span>{{album.titre}}</span>.<br>
+
+                        <span id="spanprix">Genre :</span>
+                        <a id="spantitre" href="{{ path('genre', {'genre': album.genres})}}">{{album.genres}}</a>.
+                        <br>prix :
+                        <a href="{{path('prix', {'prix':album.prix})}}">
+                            <span id="spantitre">{{album.prix}}
+                                        Ar</span></a>
+                        <form method="get" action="{{ path('ajouter', {'id': album.id})}}">
+                            <select id="monselect" name="qte">
+                                <option value="1"> 1</option>
+                                <option value="2"> 2</option>
+                                <option value="3"> 3</option>
+                                <option value="4"> 4</option>
+                                <option value="5"> 5</option>
+                            </select>
+                            <input type="submit" class="btn btn-primary" value="Ajouter au panier">
+                        </form>
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

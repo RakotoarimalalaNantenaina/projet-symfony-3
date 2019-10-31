@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <h3 id="h3artiste">Les albums correspondant</h3>
+        <div class="row view-group">
+            {% for album in album %}
+                <div class="item col-xs-4 col-lg-4">
+                    <div class="thumbnail card" id="row2">
+                        <div class="img-event">
+                            <img src="{{ asset('uploads/images/products/'~album.image)}}" alt="image" id="image3"/>
+                        </div>
+                        <div class="caption card-body">
+                            <h4 class="group card-title inner list-group-item-heading" id="h4span">
+                                {{album.chanteur}}
+                            </h4>
+                            <p class="group inner list-group-item-text" id="spanp">
+                                Cet album appartient à
+                                {{album.chanteur}}
+                                prend de la titre :
+                                <span id="spant">{{album.titre}}</span>. Il a de genre
+                                <span id="spantitre"><a  href="{{ path('genre', {'genre': album.genres})}}">{{album.genres}}</a></span>.
+                            </p>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6">
+                                    <p class="lead" id="spanp">
+                                        prix :
+                                        <a href="{{ path('prix', {'prix':album.prix})}}">{{album.prix}} Ar</a></p>
+                                        <form method="get" action="{{ path('ajouter', {'id': album.id})}}">
+                                            <select id="monselect" name="qte">
+                                                <option value="1"> 1</option>
+                                                <option value="2"> 2</option>
+                                                <option value="3"> 3</option>
+                                                <option value="4"> 4</option>
+                                                <option value="5"> 5</option>
+                                            </select>
+                                            <input type="submit" class="btn btn-primary" value="Ajouter au panier">
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="{{ path('liste_albums')}}">Voir tous les listes des albums</a><br>
+        <a href="{{ path('accueil')}}" style="color:blueviolet;font-size:20px">Accueil</a>
+    </div>
+{% endblock %}
